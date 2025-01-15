@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eduScrum Презентация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .slide {
+            display: none;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            width: 65%;
+        }
+        h2 {
+            color: #0D47A1;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="slide active">
+        <h2>Гибкая методология SCRUM в образовательном процессе</h2>
+        <p>Выполнил: Третьяк Глеб</p>
+    </section>
+
+    <section class="slide">
+        <h2>eduScrum</h2>
+        <p>Методология eduScrum комбинирует принципы Scrum с образовательными процессами для повышения вовлеченности и достижений учащихся.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Спринт (Sprint)</h2>
+        <p>Комбинированный набор учебных материалов, которые гарантируют достижение учебных целей.</p>
+        <p>Спринт заканчивается ретроспективой с проверкой завершенной работы и определением шагов по ее улучшению.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Роли (Roles)</h2>
+        <p>В eduScrum выделяются несколько ключевых ролей: учащиеся, учитель и продуктовая команда.</p>
+        <p>Каждая роль имеет свои обязанности и влияет на процесс обучения и контроля за его ходом.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Учебный продукт (Learning Product)</h2>
+        <p>Это итог работы команды за определенный спринт, который демонстрирует достигнутые учебные цели.</p>
+        <p>Учебный продукт должен быть проверяемым, и его качество является важным аспектом процесса eduScrum.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Ретроспектива (Retrospective)</h2>
+        <p>Процесс, который проходит в конце каждого спринта для анализа того, что было сделано хорошо, а что требует улучшения.</p>
+        <p>Ретроспектива помогает команде стать более эффективной и обучённой в следующем спринте.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Доска (Board)</h2>
+        <p>Инструмент для визуализации работы, который помогает команде следить за прогрессом и задачами.</p>
+        <p>Доска позволяет всем участникам видеть, на каком этапе находится работа в текущем спринте.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Цели обучения (Learning Goals)</h2>
+        <p>Основополагающие цели, которые должны быть достигнуты в рамках спринта, на которые нацелена команда.</p>
+        <p>Они помогают сфокусироваться на результате и оценивать успехи команды.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Инкремент (Increment)</h2>
+        <p>Часть законченного учебного продукта, которая добавляет к предыдущим результатам.</p>
+        <p>Каждый инкремент должен быть функциональным и соответствовать определенным критериям качества.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Обратная связь (Feedback)</h2>
+        <p>Процесс взаимодействия между учащимися и учителем для оценки прогресса и улучшения результата обучения.</p>
+        <p>Обратная связь должна быть конструктивной и систематической.</p>
+    </section>
+
+    <div>
+        <button onclick="previousSlide()">Назад</button>
+        <button onclick="nextSlide()">Вперёд</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        slides[currentSlide].classList.add('active');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+    </script>
+
+</body>
+</html>
